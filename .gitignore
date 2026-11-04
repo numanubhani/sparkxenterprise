@@ -3,3 +3,6 @@ node_modules/
 .env.local
 dist/
 .vercel/
+
+# Client spec documents and mockups (not for the public repo)
+sample files/
