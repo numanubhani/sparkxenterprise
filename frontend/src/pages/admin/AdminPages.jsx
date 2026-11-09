@@ -309,9 +309,9 @@ export function AdminRequestDetail() {
               ]
                 .filter(([, v]) => v)
                 .map(([k, v]) => (
-                  <div key={k} className="flex justify-between gap-4 border-b border-slate-100 py-1.5">
-                    <dt className="text-slate-500">{k}</dt>
-                    <dd className="text-right font-medium">{v}</dd>
+                  <div key={k} className="flex flex-wrap justify-between gap-x-4 gap-y-0.5 border-b border-slate-100 py-1.5">
+                    <dt className="shrink-0 text-slate-500">{k}</dt>
+                    <dd className="min-w-0 break-words text-right font-medium">{v}</dd>
                   </div>
                 ))}
             </dl>
