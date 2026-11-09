@@ -185,7 +185,7 @@ export function RequestDetail() {
       <PageTitle title={r.requestId} subtitle={`${TYPE_LABELS[r.type]} · submitted ${fmtDate(r.createdAt, true)}`} action={<StatusBadge status={r.status} className="text-sm" />} />
 
       <div className="grid gap-6 xl:grid-cols-[1.6fr_1fr]">
-        <div className="space-y-6">
+        <div className="min-w-0 space-y-6">
           {r.quote && (
             <Card title="Your quotation" action={<span className="text-xs text-slate-500">Sent {fmtDate(r.quote.sentAt)}</span>}>
               <div className="overflow-x-auto">
@@ -278,7 +278,7 @@ export function RequestDetail() {
           </Card>
         </div>
 
-        <div className="space-y-6">
+        <div className="min-w-0 space-y-6">
           <Card title="Progress">
             <ol className="space-y-4">
               {(r.statusHistory || []).map((h, i) => (
@@ -310,9 +310,9 @@ export function RequestDetail() {
               ]
                 .filter(([, v]) => v)
                 .map(([k, v]) => (
-                  <div key={k} className="flex justify-between gap-4">
-                    <dt className="text-slate-500">{k}</dt>
-                    <dd className="text-right font-medium">{v}</dd>
+                  <div key={k} className="flex flex-wrap justify-between gap-x-4 gap-y-0.5">
+                    <dt className="shrink-0 text-slate-500">{k}</dt>
+                    <dd className="min-w-0 break-words text-right font-medium">{v}</dd>
                   </div>
                 ))}
             </dl>
@@ -494,7 +494,7 @@ export function KybCompliance() {
     <>
       <PageTitle title="KYB & Compliance" subtitle="Know Your Business information required for high-technology equipment." />
       <div className="grid gap-6 xl:grid-cols-[1.6fr_1fr]">
-        <Card>
+        <Card className="min-w-0">
           {blocked && (
             <div className="mb-5 rounded-lg border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900">
               {!user.emailVerified ? 'Verify your email address before submitting KYB information.' : (
@@ -553,7 +553,7 @@ export function KybCompliance() {
           </form>
         </Card>
 
-        <div className="space-y-6">
+        <div className="min-w-0 space-y-6">
           <Card title="Review status">
             <StatusBadge status={kyb.status || 'Not started'} className="text-sm" />
             {kyb.submittedAt && <p className="mt-3 text-sm text-slate-600">Submitted {fmtDate(kyb.submittedAt, true)}</p>}

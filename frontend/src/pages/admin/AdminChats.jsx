@@ -122,7 +122,7 @@ export default function AdminChats() {
     <>
       <PageTitle title="Live chat" subtitle="Conversations from the website chat widget. You are emailed automatically for every new message." />
       <div className="grid gap-4 lg:grid-cols-[320px_1fr]">
-        <div className={id ? 'hidden lg:block' : ''}>
+        <div className={`min-w-0 ${id ? 'hidden lg:block' : ''}`}>
           <div className="mb-3 flex gap-2 text-sm">
             {[['', 'All'], ['open', 'Open'], ['closed', 'Closed']].map(([v, l]) => (
               <button key={l} type="button" onClick={() => setStatus(v)} className={`rounded-full px-3 py-1 ${status === v ? 'bg-navy-900 text-white' : 'bg-white ring-1 ring-slate-200 hover:bg-slate-50'}`}>
@@ -158,7 +158,7 @@ export default function AdminChats() {
           )}
         </div>
 
-        <div className={id ? '' : 'hidden lg:block'}>
+        <div className={`min-w-0 ${id ? '' : 'hidden lg:block'}`}>
           {id ? (
             <>
               <Link to="/admin/chats" className="mb-3 inline-flex items-center gap-1.5 text-sm text-slate-600 hover:text-brand lg:hidden">
