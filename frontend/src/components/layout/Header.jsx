@@ -191,6 +191,14 @@ export default function Header() {
             <Link to="/company/contact" className="block border-b border-white/10 py-3.5 font-medium">
               Contact
             </Link>
+            <Link to={user ? (isAdmin ? '/admin' : '/account') : '/login'} className="flex items-center gap-2 border-b border-white/10 py-3.5 font-medium md:hidden">
+              {user ? (
+                <span className="grid h-5 w-5 place-items-center rounded-full bg-brand text-[10px] font-bold">{user.name.charAt(0).toUpperCase()}</span>
+              ) : (
+                <User className="h-5 w-5" strokeWidth={1.7} />
+              )}
+              {user ? (isAdmin ? 'Admin' : 'My Account') : 'Log in / Create account'}
+            </Link>
             <Link to="/quote" className="btn-white mt-5 h-11 w-full text-sm sm:hidden">
               Request a Quote
             </Link>
