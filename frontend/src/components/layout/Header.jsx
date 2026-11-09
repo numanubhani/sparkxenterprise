@@ -133,7 +133,7 @@ export default function Header() {
 
           <Link to="/quote" className="relative flex flex-col items-center gap-1 text-[11px] font-medium hover:text-brand-sky">
             <ShoppingCart className="h-5 w-5" strokeWidth={1.7} />
-            Cart
+            <span className="hidden sm:inline">Cart</span>
             {count > 0 && (
               <span className="absolute -right-2 -top-2 grid h-4 min-w-4 place-items-center rounded-full bg-brand px-1 text-[10px] font-semibold">
                 {count}
