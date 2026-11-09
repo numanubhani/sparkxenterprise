@@ -46,23 +46,23 @@ export default function Hero() {
         {/* Featured product card */}
         <div className="mt-6 max-w-[1060px] rounded-xl border border-[#2a5bd7]/60 bg-navy-900/95 shadow-[0_0_30px_rgba(0,60,200,0.25)] backdrop-blur-sm">
           <div className="flex flex-col gap-5 p-5 md:flex-row md:items-center md:gap-0 md:py-4 md:pl-4 md:pr-5">
-            <div className="flex min-w-0 items-center gap-5 md:pr-6">
+            <div className="flex min-w-0 flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5 md:pr-6">
               <img
                 src="/images/featured-b300.png"
                 alt="NVIDIA Blackwell B300 GPU"
-                className="w-[140px] shrink-0 sm:w-[170px]"
+                className="w-[160px] shrink-0 sm:w-[170px]"
                 style={{ maskImage: 'radial-gradient(ellipse 72% 70% at 50% 50%, #000 60%, transparent 100%)', WebkitMaskImage: 'radial-gradient(ellipse 72% 70% at 50% 50%, #000 60%, transparent 100%)' }}
               />
               <div className="min-w-0">
                 <p className="text-[13px] font-semibold uppercase tracking-[0.08em] text-brand-label">Featured Product</p>
-                <h2 className="mt-1.5 whitespace-nowrap text-[19px] font-bold sm:text-[21px]">NVIDIA Blackwell B300</h2>
+                <h2 className="mt-1.5 text-[19px] font-bold leading-tight sm:text-[21px] lg:whitespace-nowrap">NVIDIA Blackwell B300</h2>
                 <p className="mt-1.5 text-sm leading-relaxed text-slate-300 sm:text-[15px]">
                   Next-generation GPU for AI and accelerated computing.
                 </p>
               </div>
             </div>
 
-            <ul className="space-y-2 border-white/15 md:shrink-0 md:border-l md:px-6">
+            <ul className="space-y-2 border-t border-white/15 pt-4 md:shrink-0 md:border-l md:border-t-0 md:px-6 md:pt-0">
               {FEATURE_POINTS.map(({ icon: Icon, text }) => (
                 <li key={text} className="flex items-center gap-3 text-sm text-slate-200 lg:whitespace-nowrap">
                   <Icon className="h-4 w-4 shrink-0 text-brand-sky" />
