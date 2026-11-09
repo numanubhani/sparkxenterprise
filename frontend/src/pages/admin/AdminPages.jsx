@@ -293,7 +293,7 @@ export function AdminRequestDetail() {
       <PageTitle title={r.requestId} subtitle={`${TYPE_LABELS[r.type]} · received ${fmtDate(r.createdAt, true)}`} action={<StatusBadge status={r.status} className="text-sm" />} />
 
       <div className="grid gap-6 2xl:grid-cols-[1.4fr_1fr]">
-        <div className="space-y-6">
+        <div className="min-w-0 space-y-6">
           <Card title="Customer request">
             <dl className="grid gap-x-6 gap-y-2 text-sm sm:grid-cols-2">
               {[
@@ -412,7 +412,7 @@ export function AdminRequestDetail() {
           )}
         </div>
 
-        <div className="space-y-6">
+        <div className="min-w-0 space-y-6">
           <Card title="Workflow">
             <div className="space-y-4">
               <Field label="Status">
